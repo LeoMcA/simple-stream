@@ -13,7 +13,13 @@
     "ws": "^7.2.3"
   },
   "devDependencies": {
+    "husky": "^4.2.5",
     "prettier": "^2.0.4",
     "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
