@@ -1,0 +1,19 @@
+{
+  "name": "simple-stream",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leo McArdle <leomcardle@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^7.0.3",
+    "ws": "^7.2.3"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.4",
+    "pretty-quick": "^2.0.1"
+  }
+}
