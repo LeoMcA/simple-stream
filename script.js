@@ -1,15 +1,17 @@
 import Client from "./lib/Client.js";
 import Server from "./lib/Server.js";
+import Emoji from "./lib/Emoji.js";
 
 const video = document.querySelector("video");
 const files = document.querySelector("input[type=file]");
+const emoji = new Emoji();
 
 if (getParameterByName("d")) {
   // we're a client
 
   $("body").addClass("client");
 
-  new Client({
+  const client = new Client({
     data_string: getParameterByName("d"),
     on_channel_open: (e) => {
       console.log("on_channel_open");
@@ -17,6 +19,8 @@ if (getParameterByName("d")) {
       video.play();
     },
   });
+  client.on_message = emoji.render_emoji;
+  emoji.peer = client;
 } else {
   // we're a server
 
@@ -37,7 +41,7 @@ if (getParameterByName("d")) {
     const stream = video.captureStream
       ? video.captureStream()
       : video.mozCaptureStream();
-    new Server({
+    const server = new Server({
       signalling_url: localStorage.getItem("signalling"),
       peer_config: {
         iceServers: [
@@ -54,6 +58,8 @@ if (getParameterByName("d")) {
         $("#share_modal").modal("show");
       },
     });
+    server.on_message = emoji.render_emoji;
+    emoji.peer = server;
   }
 
   files.addEventListener("input", (e) => {

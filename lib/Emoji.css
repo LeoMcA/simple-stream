@@ -1,0 +1,41 @@
+#emoji {
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  font-family: initial;
+}
+
+#emoji .bubbles span {
+  position: absolute;
+  animation: bubble 1.5s forwards ease-in;
+}
+
+#emoji .controls {
+  position: relative;
+  z-index: 2;
+}
+
+#emoji button {
+  padding: 0;
+  border: 0;
+  margin-right: 24px;
+}
+
+#emoji img {
+  height: 24px;
+  width: 24px;
+  border-radius: 100%;
+  box-shadow: 0 0 5px #000;
+}
+
+@keyframes bubble {
+  from {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(0, -50vh);
+  }
+}
