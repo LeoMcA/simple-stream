@@ -1,6 +1,7 @@
 import Client from "./lib/Client.js";
 import Server from "./lib/Server.js";
 import Emoji from "./lib/Emoji.js";
+import VideoPlayer from "./lib/VideoPlayer.js";
 
 const video = document.querySelector("video");
 const files = document.querySelector("input[type=file]");
@@ -37,7 +38,7 @@ if (getParameterByName("d")) {
 
   function updateVideo() {
     const file = files.files[0];
-    video.src = URL.createObjectURL(file);
+    new VideoPlayer(video, URL.createObjectURL(file));
     const stream = video.captureStream
       ? video.captureStream()
       : video.mozCaptureStream();
