@@ -9,6 +9,7 @@
   "author": "Leo McArdle <leomcardle@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "open-iconic": "^1.1.1",
     "uuid": "^7.0.3",
     "ws": "^7.2.3"
   },
