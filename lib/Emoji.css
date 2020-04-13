@@ -19,6 +19,7 @@
   padding: 0;
   border: 0;
   margin-right: 20px;
+  opacity: 0.5;
 }
 
 #emoji img {
