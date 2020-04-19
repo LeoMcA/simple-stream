@@ -25,8 +25,7 @@
 #emoji img {
   height: 45px;
   width: 45px;
-  border-radius: 100%;
-  box-shadow: 0 0 5px #000;
+  filter: drop-shadow(0 0 5px #000);
 }
 
 @keyframes bubble {
